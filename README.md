@@ -1,1 +1,1 @@
-# note-home
+# Note Taker Starter Code
