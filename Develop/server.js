@@ -27,7 +27,7 @@ app.post('/api/notes', (req, res) => {
         const newNote = {
             "title": title,
             "text": text,
-            "uuid": crypto.randomUUID()
+            "id": crypto.randomUUID()
         };
         readAndAppend(newNote, './db/db.json');
 
@@ -36,7 +36,17 @@ app.post('/api/notes', (req, res) => {
     }
 });
 
-// ADD APP.DELETE
+app.delete('/api/notes:id', (req, res) => {
+    let selectedID = req.params.id;
+    let db = fs.readFileSync('./db/db.json');
+    db = JSON.parse(db);
+    db = db.filter(function(obj) {
+        return obj.id !== selectedID;
+    });
+    db = JSON.stringify(db);
+    fs.writeFileSync('./db/db.json', db);
+    
+});
 
 app.listen(PORT, () =>
   console.log(`Express server listening on port ${PORT}!`)
