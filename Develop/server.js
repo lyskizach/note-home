@@ -36,16 +36,13 @@ app.post('/api/notes', (req, res) => {
     }
 });
 
-app.delete('/api/notes:id', (req, res) => {
-    let selectedID = req.params.id;
+app.delete('/api/notes/:id', (req, res) => {
+    const selectedID = req.params.id;
     let db = fs.readFileSync('./db/db.json');
     db = JSON.parse(db);
-    db = db.filter(function(obj) {
-        return obj.id !== selectedID;
-    });
+    db = db.filter((item) => item['id'] != selectedID);
     db = JSON.stringify(db);
     fs.writeFileSync('./db/db.json', db);
-    
 });
 
 app.listen(PORT, () =>
