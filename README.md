@@ -12,7 +12,7 @@
   - [Questions](#questions)
 
   ## Screenshot of Deployed Link
-  "![alt text](notesscreenshot.png "Screenshot of deployed link")"
+  ![alt text](notesscreenshot.png "Screenshot of deployed link")
 
   ## Description
   This is an application that allows you to write and save notes. 
