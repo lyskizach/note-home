@@ -16,6 +16,8 @@
 
   ## Description
   This is an application that allows you to write and save notes. 
+  
+  P.S. the 'help.js' in ./public/assets/js has code from class activity (it is also noted in the file)
 
   ## Installation
   N/A
